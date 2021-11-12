@@ -1,0 +1,36 @@
+CASE loan_status
+	WHEN 'Fully Paid' THEN 1
+	ELSE 0
+END AS loan_status_Fully Paid,
+CASE loan_status
+	WHEN 'Charged Off' THEN 1
+	ELSE 0
+END AS loan_status_Charged Off,
+CASE loan_status
+	WHEN 'Does not meet the credit policy. Status:Fully Paid' THEN 1
+	ELSE 0
+END AS loan_status_Does not meet the credit policy. Status:Fully Paid,
+CASE loan_status
+	WHEN 'Current' THEN 1
+	ELSE 0
+END AS loan_status_Current,
+CASE loan_status
+	WHEN 'Late (31-120 days)' THEN 1
+	ELSE 0
+END AS loan_status_Late (31-120 days),
+CASE loan_status
+	WHEN 'In Grace Period' THEN 1
+	ELSE 0
+END AS loan_status_In Grace Period,
+CASE loan_status
+	WHEN 'Does not meet the credit policy. Status:Charged Off' THEN 1
+	ELSE 0
+END AS loan_status_Does not meet the credit policy. Status:Charged Off,
+CASE loan_status
+	WHEN 'Late (16-30 days)' THEN 1
+	ELSE 0
+END AS loan_status_Late (16-30 days),
+CASE loan_status
+	WHEN 'Default' THEN 1
+	ELSE 0
+END AS loan_status_Default,

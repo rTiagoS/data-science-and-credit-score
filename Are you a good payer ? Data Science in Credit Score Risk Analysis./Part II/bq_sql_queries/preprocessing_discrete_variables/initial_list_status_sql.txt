@@ -1,0 +1,8 @@
+CASE initial_list_status
+	WHEN 'f' THEN 1
+	ELSE 0
+END AS initial_list_status_f,
+CASE initial_list_status
+	WHEN 'w' THEN 1
+	ELSE 0
+END AS initial_list_status_w,

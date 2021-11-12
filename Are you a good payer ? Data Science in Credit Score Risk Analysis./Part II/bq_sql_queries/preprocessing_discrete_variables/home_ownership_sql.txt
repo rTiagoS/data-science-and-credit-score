@@ -1,0 +1,24 @@
+CASE home_ownership
+	WHEN 'MORTGAGE' THEN 1
+	ELSE 0
+END AS home_ownership_MORTGAGE,
+CASE home_ownership
+	WHEN 'RENT' THEN 1
+	ELSE 0
+END AS home_ownership_RENT,
+CASE home_ownership
+	WHEN 'OWN' THEN 1
+	ELSE 0
+END AS home_ownership_OWN,
+CASE home_ownership
+	WHEN 'OTHER' THEN 1
+	ELSE 0
+END AS home_ownership_OTHER,
+CASE home_ownership
+	WHEN 'NONE' THEN 1
+	ELSE 0
+END AS home_ownership_NONE,
+CASE home_ownership
+	WHEN 'ANY' THEN 1
+	ELSE 0
+END AS home_ownership_ANY,

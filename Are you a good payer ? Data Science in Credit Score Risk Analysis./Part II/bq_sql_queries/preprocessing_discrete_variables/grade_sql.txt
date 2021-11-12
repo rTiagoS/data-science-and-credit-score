@@ -1,0 +1,28 @@
+CASE grade
+	WHEN 'A' THEN 1
+	ELSE 0
+END AS grade_A,
+CASE grade
+	WHEN 'B' THEN 1
+	ELSE 0
+END AS grade_B,
+CASE grade
+	WHEN 'C' THEN 1
+	ELSE 0
+END AS grade_C,
+CASE grade
+	WHEN 'D' THEN 1
+	ELSE 0
+END AS grade_D,
+CASE grade
+	WHEN 'E' THEN 1
+	ELSE 0
+END AS grade_E,
+CASE grade
+	WHEN 'F' THEN 1
+	ELSE 0
+END AS grade_F,
+CASE grade
+	WHEN 'G' THEN 1
+	ELSE 0
+END AS grade_G,

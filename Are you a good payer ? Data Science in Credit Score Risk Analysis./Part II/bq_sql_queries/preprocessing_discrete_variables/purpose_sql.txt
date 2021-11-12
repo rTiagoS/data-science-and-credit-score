@@ -1,0 +1,56 @@
+CASE purpose
+	WHEN 'major_purchase' THEN 1
+	ELSE 0
+END AS purpose_major_purchase,
+CASE purpose
+	WHEN 'debt_consolidation' THEN 1
+	ELSE 0
+END AS purpose_debt_consolidation,
+CASE purpose
+	WHEN 'car' THEN 1
+	ELSE 0
+END AS purpose_car,
+CASE purpose
+	WHEN 'small_business' THEN 1
+	ELSE 0
+END AS purpose_small_business,
+CASE purpose
+	WHEN 'credit_card' THEN 1
+	ELSE 0
+END AS purpose_credit_card,
+CASE purpose
+	WHEN 'other' THEN 1
+	ELSE 0
+END AS purpose_other,
+CASE purpose
+	WHEN 'home_improvement' THEN 1
+	ELSE 0
+END AS purpose_home_improvement,
+CASE purpose
+	WHEN 'renewable_energy' THEN 1
+	ELSE 0
+END AS purpose_renewable_energy,
+CASE purpose
+	WHEN 'medical' THEN 1
+	ELSE 0
+END AS purpose_medical,
+CASE purpose
+	WHEN 'vacation' THEN 1
+	ELSE 0
+END AS purpose_vacation,
+CASE purpose
+	WHEN 'moving' THEN 1
+	ELSE 0
+END AS purpose_moving,
+CASE purpose
+	WHEN 'house' THEN 1
+	ELSE 0
+END AS purpose_house,
+CASE purpose
+	WHEN 'wedding' THEN 1
+	ELSE 0
+END AS purpose_wedding,
+CASE purpose
+	WHEN 'educational' THEN 1
+	ELSE 0
+END AS purpose_educational,

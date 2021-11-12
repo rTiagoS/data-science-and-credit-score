@@ -1,0 +1,12 @@
+    CASE verification_status
+        WHEN 'Not Verified' THEN 1
+        ELSE 0
+    END AS `verification_status_Not_Verified`,
+    CASE verification_status
+        WHEN 'Source Verified' THEN 1
+        ELSE 0
+    END AS `verification_status_Source_Verified`,
+    CASE verification_status
+        WHEN 'Verified' THEN 1
+        ELSE 0
+    END AS `verification_status_Verified`,

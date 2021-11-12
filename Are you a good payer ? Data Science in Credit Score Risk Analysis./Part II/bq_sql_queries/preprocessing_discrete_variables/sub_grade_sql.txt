@@ -1,0 +1,140 @@
+CASE sub_grade
+	WHEN 'A1' THEN 1
+	ELSE 0
+END AS sub_grade_A1,
+CASE sub_grade
+	WHEN 'A2' THEN 1
+	ELSE 0
+END AS sub_grade_A2,
+CASE sub_grade
+	WHEN 'A3' THEN 1
+	ELSE 0
+END AS sub_grade_A3,
+CASE sub_grade
+	WHEN 'A4' THEN 1
+	ELSE 0
+END AS sub_grade_A4,
+CASE sub_grade
+	WHEN 'A5' THEN 1
+	ELSE 0
+END AS sub_grade_A5,
+CASE sub_grade
+	WHEN 'B1' THEN 1
+	ELSE 0
+END AS sub_grade_B1,
+CASE sub_grade
+	WHEN 'B2' THEN 1
+	ELSE 0
+END AS sub_grade_B2,
+CASE sub_grade
+	WHEN 'B3' THEN 1
+	ELSE 0
+END AS sub_grade_B3,
+CASE sub_grade
+	WHEN 'B4' THEN 1
+	ELSE 0
+END AS sub_grade_B4,
+CASE sub_grade
+	WHEN 'B5' THEN 1
+	ELSE 0
+END AS sub_grade_B5,
+CASE sub_grade
+	WHEN 'C1' THEN 1
+	ELSE 0
+END AS sub_grade_C1,
+CASE sub_grade
+	WHEN 'C2' THEN 1
+	ELSE 0
+END AS sub_grade_C2,
+CASE sub_grade
+	WHEN 'C3' THEN 1
+	ELSE 0
+END AS sub_grade_C3,
+CASE sub_grade
+	WHEN 'C4' THEN 1
+	ELSE 0
+END AS sub_grade_C4,
+CASE sub_grade
+	WHEN 'C5' THEN 1
+	ELSE 0
+END AS sub_grade_C5,
+CASE sub_grade
+	WHEN 'D1' THEN 1
+	ELSE 0
+END AS sub_grade_D1,
+CASE sub_grade
+	WHEN 'D2' THEN 1
+	ELSE 0
+END AS sub_grade_D2,
+CASE sub_grade
+	WHEN 'D3' THEN 1
+	ELSE 0
+END AS sub_grade_D3,
+CASE sub_grade
+	WHEN 'D4' THEN 1
+	ELSE 0
+END AS sub_grade_D4,
+CASE sub_grade
+	WHEN 'D5' THEN 1
+	ELSE 0
+END AS sub_grade_D5,
+CASE sub_grade
+	WHEN 'E1' THEN 1
+	ELSE 0
+END AS sub_grade_E1,
+CASE sub_grade
+	WHEN 'E2' THEN 1
+	ELSE 0
+END AS sub_grade_E2,
+CASE sub_grade
+	WHEN 'E3' THEN 1
+	ELSE 0
+END AS sub_grade_E3,
+CASE sub_grade
+	WHEN 'E4' THEN 1
+	ELSE 0
+END AS sub_grade_E4,
+CASE sub_grade
+	WHEN 'E5' THEN 1
+	ELSE 0
+END AS sub_grade_E5,
+CASE sub_grade
+	WHEN 'F1' THEN 1
+	ELSE 0
+END AS sub_grade_F1,
+CASE sub_grade
+	WHEN 'F2' THEN 1
+	ELSE 0
+END AS sub_grade_F2,
+CASE sub_grade
+	WHEN 'F3' THEN 1
+	ELSE 0
+END AS sub_grade_F3,
+CASE sub_grade
+	WHEN 'F4' THEN 1
+	ELSE 0
+END AS sub_grade_F4,
+CASE sub_grade
+	WHEN 'F5' THEN 1
+	ELSE 0
+END AS sub_grade_F5,
+CASE sub_grade
+	WHEN 'G1' THEN 1
+	ELSE 0
+END AS sub_grade_G1,
+CASE sub_grade
+	WHEN 'G2' THEN 1
+	ELSE 0
+END AS sub_grade_G2,
+CASE sub_grade
+	WHEN 'G3' THEN 1
+	ELSE 0
+END AS sub_grade_G3,
+CASE sub_grade
+	WHEN 'G4' THEN 1
+	ELSE 0
+END AS sub_grade_G4,
+CASE sub_grade
+	WHEN 'G5' THEN 1
+	ELSE 0
+END AS sub_grade_G5,
