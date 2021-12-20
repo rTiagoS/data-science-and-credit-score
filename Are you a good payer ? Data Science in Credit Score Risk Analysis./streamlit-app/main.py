@@ -2,7 +2,8 @@
 # Libs
 import streamlit as st
 
-from modules import intro
+from modules import intro, dashboard
+
 
 # Set page title and favicon
 st.set_page_config(page_title = 'Credit Scoring Project', page_icon = "", layout="wide")
@@ -28,6 +29,11 @@ def main():
     if app_mode == "An Intro":
         abstract_text.empty()
         intro.run_app()
+    
+    elif app_mode == 'Dashboard':
+        abstract_text.empty()
+        dashboard.run_app()
+        
 
 
 def get_file_content_as_string(path):
