@@ -1,0 +1,29 @@
+CHART
+
+
+Linha temporal do crescimento de bad payers vs good payers
+
+EIXO X - ultimos 12 meses
+
+EIXO Y - quantidade de clientes (label = loan_Status)
+
+
+Gráfico de barras 
+
+EIXO X - GRADES (label: loan_status)
+EIXO Y - quantidade de clientes
+
+DISTRIBUIÇÃO DA FEATURE LOAN_AMNT por loan_status
+
+Histograma Loan Amount by Loan_Status
+
+
+GRÁFICO DE BARRAS
+
+Quantidade de clientes que adentraram nos últimos anos por mês (label: loan_status).
+
+
+
+GRÁFICO DE BARRAS
+
+Quantidade de clientes  por emp_lenght
