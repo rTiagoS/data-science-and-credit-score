@@ -1,7 +1,8 @@
 commands.txt
 preprocessed_data_from_2007_2014.csv
 workflows/
-pics/
+figs/
 mysql-volume/
 jupyter-volume/
 dockerfiles_scripts/
+backup.sql
