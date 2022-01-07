@@ -6,10 +6,10 @@ class MyDB(object):
 
     def __init__(self, timeout=5000) -> None:
 
-        self.__host = '172.17.0.2'
+        self.__host = 'pprojects-db.c90vcpjjwgpo.us-east-1.rds.amazonaws.com'
         self.__db = 'LendingClub'
-        self.__user = 'root'
-        self.__password = '0612'
+        self.__user = 'admin'
+        self.__password = 'trs061214'
         self.__port = 3306
 
         
