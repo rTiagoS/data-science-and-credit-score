@@ -1,0 +1,37 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:771983336269:task-definition/aws-pprojects-task-definition:1",
+    "containerDefinitions": [
+        {
+            "name": "aws-ds-streamlit",
+            "image": "public.ecr.aws/b1l0z6x6/aws-ds-streamlit",
+            "cpu": 0,
+            "memory": 300,
+            "portMappings": [
+                {
+                    "containerPort": 8501,
+                    "hostPort": 0,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": []
+        }
+    ],
+    "family": "aws-pprojects-task-definition",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "placementConstraints": [],
+    "compatibilities": [
+        "EXTERNAL",
+        "EC2"
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "registeredAt": "2022-01-07T18:10:57.568Z",
+    "registeredBy": "arn:aws:iam::771983336269:root",
+    "tags": []
+}
