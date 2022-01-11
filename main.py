@@ -31,11 +31,11 @@ def main():
 
     app_mode = st.sidebar.radio('Navigation', PAGES)
     
-    if app_mode == "An Intro":
+    if app_mode == "Credit Score Intro":
         abstract_text.empty()
         intro.run_app()
     
-    elif app_mode == 'Dashboard':
+    elif app_mode == 'Credit Score Dashboard':
         abstract_text.empty()
         dashboard.run_app()
     
