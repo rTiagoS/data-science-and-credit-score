@@ -82,11 +82,12 @@ def run_app():
             st.write("")
         
         with col10:
-            st.write("")
-            st.write("")
-            st.write("")
-            st.write("")
-            st.pyplot(hist_chart_by_annual_inc())
+            with st.container():
+                st.write("")
+                st.write("")
+                st.write("")
+                st.write("")
+                st.pyplot(hist_chart_by_annual_inc())
 
         st.write("")
         
@@ -165,14 +166,13 @@ def kpi_up_middle():
                 mode="number+delta",
                 value=nr_bad_payers,
                 number={'suffix': "", "font": {"size": 40, 'color': "#008080", 'family': "Arial"}, 'valueformat': ',f'},
-                delta={'position': "bottom", 'reference': 10000},
+                delta={'position': "bottom", 'reference': 10000, 'relative': True},
                 domain={'x': [0, 1], 'y': [0, 1]}))
     fig_c2.update_layout(autosize=False,
                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=30),
                                 paper_bgcolor="#E4FDF6", font={'size': 20})
     fig_c2.update_traces(delta_decreasing_color="#3D9970",
                                 delta_increasing_color="#FF4136",
-                                delta_valueformat='f',
                                 selector=dict(type='indicator'))
 
 
@@ -278,7 +278,7 @@ def bar_chart_by_grade():
         
     return fig
 
-@st.cache
+
 def hist_chart_by_annual_inc():
 
     query="""
@@ -295,7 +295,7 @@ def hist_chart_by_annual_inc():
                 t2.loan_status NOT IN ('Charged Off', 'Default','Does not meet the credit policy. Status:Charged Off','Late (31-120 days)')
             ORDER BY
                 RAND()
-            LIMIT 10000
+            LIMIT 500
             ) AS A
 
             UNION ALL
@@ -312,7 +312,7 @@ def hist_chart_by_annual_inc():
                 t1.loan_status IN ('Charged Off', 'Default','Does not meet the credit policy. Status:Charged Off','Late (31-120 days)')
             ORDER BY
                 RAND()
-            LIMIT 10000
+            LIMIT 500
             ) AS B
             """
     mysql_client = mysql.MyDB()

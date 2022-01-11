@@ -23,6 +23,7 @@ COPY requirements.txt requirements.txt
 COPY modules/ modules/
 COPY markdowns/ markdowns/
 COPY figures/ figures/
+COPY .streamlit/ .streamlit/
 COPY constants.py constants.py
 COPY main.py main.py
 
