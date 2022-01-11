@@ -114,7 +114,7 @@ def run_app():
 
     #st.write(f"Resultado: {result}")
 
-
+@st.cache
 def kpi_up_left():
 
     mysql_client = mysql.MyDB()
@@ -139,6 +139,7 @@ def kpi_up_left():
                          paper_bgcolor="#E4FDF6", font={'size': 20})
     return fig_c1
 
+@st.cache
 def kpi_up_middle():
 
     mysql_client = mysql.MyDB()
@@ -177,9 +178,11 @@ def kpi_up_middle():
 
     return fig_c2
 
+@st.cache
 def kpi_up_right():
     pass
 
+@st.cache
 def bar_chart_by_grade():
     
     mysql_client = mysql.MyDB()
@@ -275,7 +278,7 @@ def bar_chart_by_grade():
         
     return fig
 
-
+@st.cache
 def hist_chart_by_annual_inc():
 
     query="""
@@ -342,7 +345,7 @@ def hist_chart_by_annual_inc():
 
     
     return fig
-
+@st.cache
 def geomap_chart():
 
     query = """

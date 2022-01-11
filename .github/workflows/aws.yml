@@ -61,7 +61,10 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker build --build-arg AWS_RDS_HOST="${{ secrets.AWS_RDS_HOST }}" \
+            --build-arg AWS_RDS_LOGIN="${{ secrets.AWS_RDS_LOGIN }}" \
+            --build-arg AWS_RDS_PASS="${{ secrets.AWS_RDS_PASS }}" \
+            -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
     - name: Fill in the new image ID in the Amazon ECS task definition
@@ -76,6 +79,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: aws-pprojects-service
-        cluster: aws-pprojects-cluster
+        service: pprojects-service
+        cluster: pprojects-cluster
         wait-for-service-stability: true

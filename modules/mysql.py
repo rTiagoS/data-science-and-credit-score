@@ -1,15 +1,17 @@
 import mysql.connector
-
+import os
+import streamlit as st
 from mysql.connector import Error
+
 
 class MyDB(object):
 
     def __init__(self, timeout=5000) -> None:
 
-        self.__host = 'pprojects-db.c90vcpjjwgpo.us-east-1.rds.amazonaws.com'
+        self.__host = os.environ.get('AWS_RDS_HOST')
         self.__db = 'LendingClub'
-        self.__user = 'admin'
-        self.__password = 'trs061214'
+        self.__user = os.environ.get('AWS_RDS_LOGIN')
+        self.__password = os.environ.get('AWS_RDS_PASS')
         self.__port = 3306
 
         
@@ -19,7 +21,7 @@ class MyDB(object):
             connection.close()
             print("MySQL connection is closed")
     
-    # Definir o que retorna.
+    # @st.cache
     def mysql_stablish_connection(self):
 
         try:
@@ -40,7 +42,7 @@ class MyDB(object):
         finally:
             return connection
 
-    
+    @st.cache
     def mysql_execute_query(self, query):
 
         connection = self.mysql_stablish_connection()

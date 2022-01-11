@@ -12,11 +12,12 @@ from modules import intro, dashboard
 st.set_page_config(page_title = 'Credit Scoring Project', page_icon = "", layout="wide", initial_sidebar_state="expanded")
 
 PAGES = [
+    "About the Project",
     "An Intro",
     "Dashboard",
     "My Credit Score",
-    "Pipeline",
-    "About"
+    "Pipeline"
+    
 ]
 
 def main():
@@ -36,6 +37,11 @@ def main():
     elif app_mode == 'Dashboard':
         abstract_text.empty()
         dashboard.run_app()
+    
+    elif app_mode == 'About the Project':
+        abstract_text.empty()
+        st.markdown(get_file_content_as_string("markdowns/About the Project.md"))
+
         
 
 
