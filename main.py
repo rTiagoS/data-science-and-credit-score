@@ -13,10 +13,11 @@ st.set_page_config(page_title = 'Credit Scoring Project', page_icon = "", layout
 
 PAGES = [
     "About the Project",
-    "An Intro",
-    "Dashboard",
-    "My Credit Score",
-    "Pipeline"
+    "Credit Score Intro",
+    "Credit Score Dashboard",
+    "Credit Score Model",
+    "Credit Score Pipeline",
+    "About me"
     
 ]
 
@@ -41,6 +42,18 @@ def main():
     elif app_mode == 'About the Project':
         abstract_text.empty()
         st.markdown(get_file_content_as_string("markdowns/About the Project.md"))
+
+    elif app_mode == 'Credit Score Model':
+        abstract_text.empty()
+        st.markdown("# IN PROGRESS...")
+    
+    elif app_mode == 'Credit Score Pipeline':
+        abstract_text.empty()
+        st.markdown("# IN PROGRESS...")
+
+    elif app_mode == 'About me':
+        abstract_text.empty()
+        st.markdown("# IN PROGRESS...")
 
         
 
