@@ -57,9 +57,9 @@ def run_app():
             st.markdown(html_card_header3, unsafe_allow_html=True)
             fig_c3 = go.Figure(go.Indicator(
                 mode="number+delta",
-                value=1.085,
+                value=13641,
                 number={"font": {"size": 40, 'color': "#008080", 'family': "Arial"}},
-                delta={'position': "bottom", 'reference': 1, 'relative': False},
+                delta={'position': "bottom", 'reference': 12550, 'relative': False},
                 domain={'x': [0, 1], 'y': [0, 1]}))
             fig_c3.update_layout(autosize=False,
                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=30),
@@ -165,8 +165,8 @@ def kpi_up_middle():
     fig_c2 = go.Figure(go.Indicator(
                 mode="number+delta",
                 value=nr_bad_payers,
-                number={'suffix': "", "font": {"size": 40, 'color': "#008080", 'family': "Arial"}, 'valueformat': ',f'},
-                delta={'position': "bottom", 'reference': 10000, 'relative': True},
+                number={'suffix': "", "font": {"size": 40, 'color': "#008080", 'family': "Arial"}},
+                delta={'position': "bottom", 'reference': 49000, 'relative': True},
                 domain={'x': [0, 1], 'y': [0, 1]}))
     fig_c2.update_layout(autosize=False,
                                 width=350, height=90, margin=dict(l=20, r=20, b=20, t=30),
@@ -487,71 +487,75 @@ def bar_chart_by_isse_d():
 # @st.cache
 def bar_line_chart():
 
-    query = """
+    # query = """
             
-            SELECT
-                issue_d,
-                'bad payer' AS payer_status
+    #         SELECT
+    #             issue_d,
+    #             'bad payer' AS payer_status
 
-            FROM
-                `src_loan_data_2007_2014`
-            WHERE
-                loan_status IN ('Charged Off', 'Default','Does not meet the credit policy. Status:Charged Off','Late (31-120 days)')
+    #         FROM
+    #             `src_loan_data_2007_2014`
+    #         WHERE
+    #             loan_status IN ('Charged Off', 'Default','Does not meet the credit policy. Status:Charged Off','Late (31-120 days)')
 
-            UNION ALL
+    #         UNION ALL
 
-            SELECT
-                issue_d,
-                'good payer' AS payer_status
+    #         SELECT
+    #             issue_d,
+    #             'good payer' AS payer_status
 
-            FROM
-                `src_loan_data_2007_2014`
-            WHERE
-                loan_status NOT IN ('Charged Off', 'Default','Does not meet the credit policy. Status:Charged Off','Late (31-120 days)')
+    #         FROM
+    #             `src_loan_data_2007_2014`
+    #         WHERE
+    #             loan_status NOT IN ('Charged Off', 'Default','Does not meet the credit policy. Status:Charged Off','Late (31-120 days)')
 
-            """
+    #         """
 
-    mysql_client = mysql.MyDB()
+    # mysql_client = mysql.MyDB()
 
-    query_results = mysql_client.mysql_execute_query(query)
+    # query_results = mysql_client.mysql_execute_query(query)
 
-    issue_d = []
-    payer_status = []
+    # issue_d = []
+    # payer_status = []
 
-    for res in query_results:
-        issue_d.append(res[0])
-        payer_status.append(res[1])
+    # for res in query_results:
+    #     issue_d.append(res[0])
+    #     payer_status.append(res[1])
 
-    df = pd.DataFrame(dict(issue_date=issue_d, payer_label = payer_status))
+    # df = pd.DataFrame(dict(issue_date=issue_d, payer_label = payer_status))
 
-    df['issue_date'] = pd.to_datetime(df['issue_date'], format = "%b-%y")
-    df['month'] = df.issue_date.dt.strftime('%b')
-    df['year'] = df.issue_date.dt.strftime('%Y')
+    # df['issue_date'] = pd.to_datetime(df['issue_date'], format = "%b-%y")
+    # df['month'] = df.issue_date.dt.strftime('%b')
+    # df['year'] = df.issue_date.dt.strftime('%Y')
 
-    months = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split()
+    # months = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split()
 
     
-    df_1 = df.groupby(['month', 'year'])['payer_label'].count().reset_index().sort_values(by=['year'], ascending = True)
+    # df_1 = df.groupby(['month', 'year'])['payer_label'].count().reset_index().sort_values(by=['year'], ascending = True)
 
-    df_2 = df.groupby(['month', 'year', 'payer_label']).count().reset_index().sort_values(by=['year'], ascending = True)
+    # df_2 = df.groupby(['month', 'year', 'payer_label']).count().reset_index().sort_values(by=['year'], ascending = True)
 
-    df_2['month'] =  pd.Categorical(df_2['month'], categories = months, ordered = True)
-    df_2 = df_2.sort_values(by=['year', 'month'], ascending = True)
-    d = df_2[df_2['payer_label'] == 'bad payer'].reset_index(drop = True)
-    l = df_2[df_2['payer_label'] == 'good payer'].reset_index(drop=True)
-    d.drop(['month', 'year','payer_label'], axis = 1, inplace = True)
-    l.drop(['month', 'year','payer_label'], axis = 1, inplace = True)
-    d.columns = ['bad_payer_issue']
-    l.columns = ['good_payer_issue']
+    # df_2['month'] =  pd.Categorical(df_2['month'], categories = months, ordered = True)
+    # df_2 = df_2.sort_values(by=['year', 'month'], ascending = True)
+    # d = df_2[df_2['payer_label'] == 'bad payer'].reset_index(drop = True)
+    # l = df_2[df_2['payer_label'] == 'good payer'].reset_index(drop=True)
+    # d.drop(['month', 'year','payer_label'], axis = 1, inplace = True)
+    # l.drop(['month', 'year','payer_label'], axis = 1, inplace = True)
+    # d.columns = ['bad_payer_issue']
+    # l.columns = ['good_payer_issue']
 
 
-    c = pd.concat([l,d], axis=1)
+    # c = pd.concat([l,d], axis=1)
 
-    df_1['month'] = pd.Categorical(df_1['month'], categories = months, ordered = True)
-    df_1 = df_1.reset_index(drop=True)
-    df_1 = df_1.sort_values(by=['year', 'month'], ascending = True)
+    # df_1['month'] = pd.Categorical(df_1['month'], categories = months, ordered = True)
+    # df_1 = df_1.reset_index(drop=True)
+    # df_1 = df_1.sort_values(by=['year', 'month'], ascending = True)
 
-    df_1 = pd.concat([df_1, c], axis = 1)
+    # df_1 = pd.concat([df_1, c], axis = 1)
+
+    # df_1.to_pickle("helpers/dataframe/issue_d.pkl")
+
+    df_1 = pd.read_pickle("helpers/dataframe/issue_d.pkl")
 
     years = list(df_1.year.unique())
     
@@ -667,7 +671,7 @@ def get_html_card(card):
         return """
                 <div class="card">
                     <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ACC9C4; padding-top: 5px; width: 350px;height: 70px;">
-                        <h4 class="card-title" style="background-color:#ACC9C4; color:#008080; font-family:Sans serif; text-align: center; padding: 0px 0;">% Tot. Bad Payers</h4>
+                        <h4 class="card-title" style="background-color:#ACC9C4; color:#008080; font-family:Sans serif; text-align: center; padding: 0px 0;">Tot. Bad Payers (%)</h4>
                     </div>
                 </div>
                 """
@@ -676,7 +680,7 @@ def get_html_card(card):
         return """
                 <div class="card">
                     <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ACC9C4; padding-top: 1rem;; width: 350px;height: 50px;">
-                            <p class="card-title" style="background-color:#ACC9C4; color:#008080; font-family:Sans serif; text-align: center; padding: 0px 0;">Teste 46%</p>
+                            <p class="card-title" style="background-color:#ACC9C4; color:#008080; font-family:Sans serif; text-align: center; padding: 0px 0;">Baseline 49k</p>
                     </div>
                 </div>
                 """
@@ -685,7 +689,7 @@ def get_html_card(card):
         return """
                 <div class="card">
                     <div class="card-body" style="border-radius: 10px 10px 0px 0px; background: #ACC9C4; padding-top: 5px; width: 350px;height: 70px;">
-                        <h4 class="card-title" style="background-color:#ACC9C4; color:#008080; font-family:Sans serif; text-align: center; padding: 0px 0;">Total Losses $</h4>
+                        <h4 class="card-title" style="background-color:#ACC9C4; color:#008080; font-family:Sans serif; text-align: center; padding: 0px 0;">Total Losses ($) </h4>
                     </div>
                 </div>
                 """
@@ -693,7 +697,7 @@ def get_html_card(card):
         return """
                 <div class="card">
                     <div class="card-body" style="border-radius: 0px 0px 10px 10px; background: #ACC9C4; padding-top: 1rem;; width: 350px;height: 50px;">
-                            <p class="card-title" style="background-color:#ACC9C4; color:#008080; font-family:Sans serif; text-align: center; padding: 0px 0;">Teste 46%</p>
+                            <p class="card-title" style="background-color:#ACC9C4; color:#008080; font-family:Sans serif; text-align: center; padding: 0px 0;">Baseline 12550 $</p>
                     </div>
                 </div>
                 """

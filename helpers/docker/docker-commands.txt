@@ -1,3 +1,16 @@
 SQL:
 
 docker run -e MYSQL_ROOT_PASSWORD=0612 --name ds_projects -d -p 3307:3306  -v "$PWD/mysql-volume":/var/lib/mysql mysql:5.7
+
+docker build --pull -- rm --build-arg AWS_RDS_HOST="${{ secrets.AWS_RDS_HOST }}" \
+            --build-arg AWS_RDS_LOGIN="${{ secrets.AWS_RDS_LOGIN }}" \
+            --build-arg AWS_RDS_PASS="${{ secrets.AWS_RDS_PASS }}" -t streamlit_app_img .
+
+# Pega o último commit e destrói ele. Remove todas as modificações que o último commit fez. Inclusive remove ele do git logs.
+git reset --hard HEAD~
+
+
+self.__host = 'pprojects-db.c90vcpjjwgpo.us-east-1.rds.amazonaws.com'
+self.__db = 'LendingClub'
+self.__user = 'admin'
+self.__password = 'trs061214'

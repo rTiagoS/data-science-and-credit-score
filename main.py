@@ -45,15 +45,15 @@ def main():
 
     elif app_mode == 'Credit Score Model':
         abstract_text.empty()
-        st.markdown("# IN PROGRESS...")
+        st.markdown(get_file_content_as_string("markdowns/Credit Score Model.md"))
     
     elif app_mode == 'Credit Score Pipeline':
         abstract_text.empty()
-        st.markdown("# IN PROGRESS...")
+        st.markdown(get_file_content_as_string("markdowns/Credit Score Pipeline.md"))
 
     elif app_mode == 'About me':
         abstract_text.empty()
-        st.markdown("# IN PROGRESS...")
+        st.markdown(get_file_content_as_string("markdowns/About me.md"))
 
         
 
