@@ -1,4 +1,4 @@
-# Are you a good payer 💰?  Data Science in Credit Score Risk Analysis.
+# Deploying a Data Science application  with Github Actions + AWS ECS.
 
 > This project has been developed aiming to illustrate an awesome data science application. It will be presented some essentials data science tools and skills required in a data science real scenario. I hope you enjoy it ;)
 
