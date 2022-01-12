@@ -1,5 +1,5 @@
 helpers/dataset/
 pprojects_env/
-modules/__pycache__
+modules/__pycache__/
 helpers/.ipynb_checkpoints
 
