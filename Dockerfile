@@ -24,6 +24,7 @@ COPY modules/ modules/
 COPY markdowns/ markdowns/
 COPY figures/ figures/
 COPY .streamlit/ .streamlit/
+COPY helpers/dataframe/ helpers/dataframe/
 COPY constants.py constants.py
 COPY main.py main.py
 
